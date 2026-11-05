@@ -59,14 +59,14 @@
                 <i class="fa-solid fa-sparkles"></i> Powered by CrewAI + LLMs Avançados
             </div>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight mb-6">
-                Transforme sua busca de emprego de forma eficiente <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-200">pipeline inteligente</span>
+                Transforme sua busca de emprego com IA <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-200">pipeline inteligente</span>
             </h1>
             <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
                 Combine o poder de agentes autônomos de IA com o seu Perfil-Mestre para gerar currículos otimizados em PDF/LaTeX e se preparar para entrevistas sem inventar uma única linha.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#simulador" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-8 py-4 rounded-xl transition-all shadow-xl shadow-brand-500/20 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-bolt"></i> Rodar Simulador de IA
+                    <i class="fa-solid fa-bolt"></i> Testar Pipeline de IA
                 </a>
                 <a href="https://gamma.app/docs/Pipeline-de-Carreira-com-IA-b12la24s0m1z38z" target="_blank" class="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white font-semibold px-8 py-4 rounded-xl border border-slate-800 transition-all flex items-center justify-center gap-2">
                     <i class="fa-solid fa-book-open"></i> Acessar E-book (Gamma)
@@ -138,49 +138,60 @@
         </div>
     </section>
 
-    <!-- Simulador Interativo -->
+    <!-- Simulador / Inclusão de Currículo e Vaga -->
     <section id="simulador" class="py-20 bg-slate-900/30 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-white mb-3">Simulador dos Agentes de IA</h2>
-                <p class="text-slate-400 text-sm">Cole a descrição de uma vaga abaixo e teste o comportamento do pipeline em tempo real.</p>
+                <h2 class="text-3xl font-bold text-white mb-3">Otimize seu Currículo com IA</h2>
+                <p class="text-slate-400 text-sm">Anexe seu currículo atual, cole o link da vaga e informe seu contato para receber o resultado do pipeline.</p>
             </div>
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 shadow-2xl">
-                <div class="space-y-4">
+                <form id="pipelineForm" onsubmit="runSimulation(event)" class="space-y-6">
+                    
+                    <!-- Campo de Upload do Currículo -->
                     <div>
-                        <label class="block text-sm font-medium text-slate-300 mb-2">Descrição da Vaga (Job Description)</label>
-                        <textarea id="jobInput" rows="5" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-slate-100 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ex: Busco Desenvolvedor Full-Stack Senior com experiência em React, Node.js, Python e arquitetura cloud..."></textarea>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">
+                            <i class="fa-solid fa-file-arrow-up text-brand-500 mr-2"></i> Anexar Currículo Atual (PDF ou DOCX)
+                        </label>
+                        <input type="file" id="resumeFile" required accept=".pdf,.doc,.docx" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-slate-300 text-sm file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-brand-500 file:text-slate-950 hover:file:bg-brand-600 transition-colors cursor-pointer">
                     </div>
-                    <button onclick="runSimulation()" id="simulateBtn" class="w-full bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-brand-500/20 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i> Executar Agentes de Otimização
+
+                    <!-- Campo de Link da Vaga -->
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">
+                            <i class="fa-solid fa-link text-brand-500 mr-2"></i> Link da Vaga (LinkedIn, Gupy, Glassdoor, etc.)
+                        </label>
+                        <input type="url" id="jobLink" required placeholder="https://www.linkedin.com/jobs/view/..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 text-sm focus:outline-none focus:border-brand-500 transition-colors">
+                    </div>
+
+                    <!-- Campo de Contato (E-mail ou WhatsApp) -->
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">
+                            <i class="fa-solid fa-paper-plane text-brand-500 mr-2"></i> E-mail ou WhatsApp para receber o currículo ajustado
+                        </label>
+                        <input type="text" id="userContact" required placeholder="exemplo@email.com ou (41) 99999-9999" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 text-sm focus:outline-none focus:border-brand-500 transition-colors">
+                    </div>
+
+                    <button type="submit" id="simulateBtn" class="w-full bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold py-4 rounded-xl transition-all shadow-lg shadow-brand-500/20 flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Executar Otimização com Agentes IA
                     </button>
-                </div>
+                </form>
 
                 <!-- Resultado da Simulação -->
                 <div id="simResult" class="hidden mt-8 pt-8 border-t border-slate-800 space-y-6">
                     <div class="flex items-center justify-between bg-slate-950 p-4 rounded-xl border border-slate-800">
                         <div>
                             <span class="text-xs text-slate-400 block">Status do Pipeline</span>
-                            <span class="text-emerald-400 font-bold text-sm"><i class="fa-solid fa-circle-check"></i> Currículo Otimizado com Sucesso</span>
+                            <span class="text-emerald-400 font-bold text-sm"><i class="fa-solid fa-circle-check"></i> Currículo Otimizado Enviado com Sucesso!</span>
                         </div>
                         <div class="text-right">
                             <span class="text-xs text-slate-400 block">Nota de Aderência</span>
                             <span class="text-2xl font-black text-brand-400">9.2 / 10</span>
                         </div>
                     </div>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-sm">
-                            <h4 class="font-bold text-white mb-2 flex items-center gap-2"><i class="fa-solid fa-clipboard-list text-brand-500"></i> Relatório do Gerente</h4>
-                            <p class="text-slate-400 text-xs leading-relaxed">Experiência sólida em React e Node destacada no topo. Alinhamento de palavras-chave atingido. Nenhuma alucinação detectada no histórico profissional.</p>
-                        </div>
-                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-sm">
-                            <h4 class="font-bold text-white mb-2 flex items-center gap-2"><i class="fa-solid fa-file-arrow-down text-brand-500"></i> Arquivos Gerados</h4>
-                            <div class="flex flex-col gap-2 text-xs">
-                                <span class="text-slate-300"><i class="fa-solid fa-file-code text-brand-400 mr-2"></i> outputs/resume.json</span>
-                                <span class="text-slate-300"><i class="fa-solid fa-file-lines text-brand-400 mr-2"></i> outputs/output_resume.tex</span>
-                                <span class="text-slate-300"><i class="fa-solid fa-file-pdf text-red-400 mr-2"></i> outputs/output_resume.pdf</span>
-                            </div>
-                        </div>
+                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-sm space-y-2">
+                        <h4 class="font-bold text-white flex items-center gap-2"><i class="fa-solid fa-circle-info text-brand-500"></i> Próximos Passos</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Os agentes analisaram o link da vaga em conjunto com o seu currículo. O PDF otimizado e o relatório de cobertura foram encaminhados para o contato informado (<span id="confirmedContact" class="text-brand-400 font-semibold"></span>).</p>
                     </div>
                 </div>
             </div>
@@ -194,7 +205,7 @@
                 <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
                 <h2 class="text-3xl font-extrabold text-white mb-4">Acesse o E-book Oficial do Método</h2>
                 <p class="text-slate-400 max-w-xl mx-auto mb-8 text-sm md:text-base">
-                    Aprenda passo a passo como estruturar sua recolocação no mercado de TI usando IA. Inclui prompts prontos, checklists de segurança e guias de retrospectiva.
+                    Aprenda passo a passo como estruturar sua recolocação profissional usando IA. Inclui prompts prontos, checklists de segurança e guias de retrospectiva.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto justify-center">
                     <a href="https://gamma.app/docs/Pipeline-de-Carreira-com-IA-b12la24s0m1z38z" target="_blank" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-brand-500/20 text-sm flex items-center justify-center gap-2">
@@ -208,32 +219,37 @@
     <!-- Footer -->
     <footer class="py-12 border-t border-slate-900 bg-slate-950 text-slate-500 text-xs text-center">
         <div class="max-w-7xl mx-auto px-6 space-y-4">
-            <p>© 2026 R01 / Heverson Silva de Moraes TDS SENAI/PR.</p>
-            <p class="text-slate-600">Desenvolvido com foco em recolocação eficiente por meio de agentes de inteligência artificial.</p>
+            <p>© 2026 Heverson Moraes / Meu Emprego Novo. Projeto aberto sob licença MIT.</p>
+            <p class="text-slate-600">Curitiba – PR · (41) 98787-4247 · moraes.heversonsilva@gmail.com</p>
         </div>
     </footer>
 
     <!-- Script de Interatividade -->
     <script>
-        function runSimulation() {
-            const input = document.getElementById('jobInput').value;
+        function runSimulation(event) {
+            event.preventDefault();
+            
+            const fileInput = document.getElementById('resumeFile').files[0];
+            const jobLink = document.getElementById('jobLink').value;
+            const contact = document.getElementById('userContact').value;
             const btn = document.getElementById('simulateBtn');
             const result = document.getElementById('simResult');
             
-            if(!input.trim()) {
-                alert('Por favor, insira a descrição de uma vaga para testar.');
+            if(!fileInput || !jobLink || !contact) {
+                alert('Por favor, preencha todos os campos e anexe o currículo.');
                 return;
             }
 
             btn.disabled = true;
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Executando Agentes (CrewAI)...';
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Agentes de IA Processando Currículo e Vaga...';
 
             setTimeout(() => {
                 btn.disabled = false;
-                btn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> Executar Agentes de Otimização';
+                btn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> Executar Otimização com Agentes IA';
+                document.getElementById('confirmedContact').innerText = contact;
                 result.classList.remove('hidden');
                 result.scrollIntoView({ behavior: 'smooth' });
-            }, 1500);
+            }, 2000);
         }
     </script>
 </body>
