@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Emprego Novo - Pipeline de Carreira com IA</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-slate-950">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center text-slate-950 font-bold text-xl shadow-lg shadow-brand-500/20">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-white">MeuEmprego<span class="text-brand-500">Novo</span></span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#metodo" class="hover:text-brand-400 transition-colors">O Método</a>
+                <a href="#recursos" class="hover:text-brand-400 transition-colors">Recursos</a>
+                <a href="#simulador" class="hover:text-brand-400 transition-colors">Simulador IA</a>
+                <a href="#ebook" class="hover:text-brand-400 transition-colors">E-book Grátis</a>
+            </nav>
+            <div>
+                <a href="https://gamma.app/docs/Pipeline-de-Carreira-com-IA-b12la24s0m1z38z" target="_blank" class="bg-brand-500 hover:bg-brand-600 text-slate-950 font-semibold px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-brand-500/20 text-sm">
+                    Ver E-book
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-44 md:pb-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-900/20 via-slate-950 to-slate-950 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-950 border border-brand-800 text-brand-400 text-xs font-semibold mb-6">
+                <i class="fa-solid fa-sparkles"></i> Powered by CrewAI + LLMs Avançados
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight mb-6">
+                Transforme sua busca de emprego de forma eficiente <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-200">pipeline inteligente</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+                Combine o poder de agentes autônomos de IA com o seu Perfil-Mestre para gerar currículos otimizados em PDF/LaTeX e se preparar para entrevistas sem inventar uma única linha.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#simulador" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-8 py-4 rounded-xl transition-all shadow-xl shadow-brand-500/20 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-bolt"></i> Rodar Simulador de IA
+                </a>
+                <a href="https://gamma.app/docs/Pipeline-de-Carreira-com-IA-b12la24s0m1z38z" target="_blank" class="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white font-semibold px-8 py-4 rounded-xl border border-slate-800 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-book-open"></i> Acessar E-book (Gamma)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- O Método: Problema vs Solução -->
+    <section id="metodo" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Busca de emprego é volume. Gerencie como engenharia.</h2>
+                <p class="text-slate-400">Deixe de enviar currículos genéricos no escuro. Adote um pipeline baseado em dados com zero alucinação.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-900 border border-red-900/30 rounded-2xl p-8 relative">
+                    <div class="absolute top-4 right-4 text-red-500 text-xl"><i class="fa-solid fa-circle-xmark"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-4">O Jeito Tradicional</h3>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-1"></i> Adaptar o currículo manualmente para cada vaga (trabalho exaustivo).</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-1"></i> Perda de foco e histórico desorganizado das candidaturas.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-1"></i> Surpresa desagradável e falta de preparo nas entrevistas técnicas.</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-900 border border-brand-500/30 rounded-2xl p-8 relative shadow-2xl shadow-brand-950/50">
+                    <div class="absolute top-4 right-4 text-brand-500 text-xl"><i class="fa-solid fa-circle-check"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-4">O Pipeline com IA</h3>
+                    <ul class="space-y-3 text-slate-300 text-sm">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-500 mt-1"></i> <strong>Única Fonte de Verdade:</strong> Escreva sua carreira uma vez em Markdown (`profile_truth.md`).</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-500 mt-1"></i> <strong>Agentes Autônomos:</strong> Estrategista, Avaliador e Editor ajustam o currículo sem inventar dados.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-500 mt-1"></i> <strong>Loop de Qualidade:</strong> O sistema itera internamente até o currículo atingir nota de aderência ≥ 8.5.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos Principais -->
+    <section id="recursos" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Recursos Poderosos da Ferramenta</h2>
+                <p class="text-slate-400">Tudo o que você precisa para dominar o seu processo de recolocação profissional.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-brand-500/50 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-brand-950 text-brand-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Zero Alucinação</h3>
+                    <p class="text-slate-400 text-sm">Regras rígidas impedem que a IA invente experiências ou datas. Sua trajetória real é rigorosamente preservada.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-brand-500/50 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-brand-950 text-brand-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Exportação LaTeX & PDF</h3>
+                    <p class="text-slate-400 text-sm">Gere currículos com layouts profissionais de nível internacional utilizando compiladores LaTeX ou ReportLab.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-brand-500/50 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-brand-950 text-brand-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Guia de Entrevistas</h3>
+                    <p class="text-slate-400 text-sm">Receba um relatório detalhado de lacunas da vaga e roteiros automáticos para se destacar nas perguntas dos recrutadores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulador Interativo -->
+    <section id="simulador" class="py-20 bg-slate-900/30 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-3">Simulador dos Agentes de IA</h2>
+                <p class="text-slate-400 text-sm">Cole a descrição de uma vaga abaixo e teste o comportamento do pipeline em tempo real.</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 shadow-2xl">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Descrição da Vaga (Job Description)</label>
+                        <textarea id="jobInput" rows="5" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-slate-100 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ex: Busco Desenvolvedor Full-Stack Senior com experiência em React, Node.js, Python e arquitetura cloud..."></textarea>
+                    </div>
+                    <button onclick="runSimulation()" id="simulateBtn" class="w-full bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-brand-500/20 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Executar Agentes de Otimização
+                    </button>
+                </div>
+
+                <!-- Resultado da Simulação -->
+                <div id="simResult" class="hidden mt-8 pt-8 border-t border-slate-800 space-y-6">
+                    <div class="flex items-center justify-between bg-slate-950 p-4 rounded-xl border border-slate-800">
+                        <div>
+                            <span class="text-xs text-slate-400 block">Status do Pipeline</span>
+                            <span class="text-emerald-400 font-bold text-sm"><i class="fa-solid fa-circle-check"></i> Currículo Otimizado com Sucesso</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-slate-400 block">Nota de Aderência</span>
+                            <span class="text-2xl font-black text-brand-400">9.2 / 10</span>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-sm">
+                            <h4 class="font-bold text-white mb-2 flex items-center gap-2"><i class="fa-solid fa-clipboard-list text-brand-500"></i> Relatório do Gerente</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed">Experiência sólida em React e Node destacada no topo. Alinhamento de palavras-chave atingido. Nenhuma alucinação detectada no histórico profissional.</p>
+                        </div>
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-sm">
+                            <h4 class="font-bold text-white mb-2 flex items-center gap-2"><i class="fa-solid fa-file-arrow-down text-brand-500"></i> Arquivos Gerados</h4>
+                            <div class="flex flex-col gap-2 text-xs">
+                                <span class="text-slate-300"><i class="fa-solid fa-file-code text-brand-400 mr-2"></i> outputs/resume.json</span>
+                                <span class="text-slate-300"><i class="fa-solid fa-file-lines text-brand-400 mr-2"></i> outputs/output_resume.tex</span>
+                                <span class="text-slate-300"><i class="fa-solid fa-file-pdf text-red-400 mr-2"></i> outputs/output_resume.pdf</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção E-book / Lead Magnet -->
+    <section id="ebook" class="py-20 bg-gradient-to-b from-slate-900/50 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="bg-slate-900 border border-brand-500/30 rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl">
+                <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <h2 class="text-3xl font-extrabold text-white mb-4">Acesse o E-book Oficial do Método</h2>
+                <p class="text-slate-400 max-w-xl mx-auto mb-8 text-sm md:text-base">
+                    Aprenda passo a passo como estruturar sua recolocação no mercado de TI usando IA. Inclui prompts prontos, checklists de segurança e guias de retrospectiva.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto justify-center">
+                    <a href="https://gamma.app/docs/Pipeline-de-Carreira-com-IA-b12la24s0m1z38z" target="_blank" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-brand-500/20 text-sm flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-book-open-reader"></i> Ler E-book Completo (Gamma)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-900 bg-slate-950 text-slate-500 text-xs text-center">
+        <div class="max-w-7xl mx-auto px-6 space-y-4">
+            <p>© 2026 R01 / Heverson Silva de Moraes TDS SENAI/PR.</p>
+            <p class="text-slate-600">Desenvolvido com foco em recolocação eficiente por meio de agentes de inteligência artificial.</p>
+        </div>
+    </footer>
+
+    <!-- Script de Interatividade -->
+    <script>
+        function runSimulation() {
+            const input = document.getElementById('jobInput').value;
+            const btn = document.getElementById('simulateBtn');
+            const result = document.getElementById('simResult');
+            
+            if(!input.trim()) {
+                alert('Por favor, insira a descrição de uma vaga para testar.');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Executando Agentes (CrewAI)...';
+
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> Executar Agentes de Otimização';
+                result.classList.remove('hidden');
+                result.scrollIntoView({ behavior: 'smooth' });
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
